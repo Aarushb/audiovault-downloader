@@ -15,15 +15,15 @@ except (ModuleNotFoundError, ImportError):
 
 import bs4
 import progressbar
-import requests
-
+#import requests
+import cloudscraper
 
 version = "0.1"
 url = "https://audiovault.net"
 TIME_FORMAT = "%Y-%m-%d"
 loggedin = False
-session = requests.session()
-
+#session = requests.session()
+session = cloudscraper.CloudScraper()  
 
 # taken and partially modified from http://code.activestate.com/recipes/578019
 def bytes2human(n):
@@ -103,7 +103,7 @@ def download(url, destination=None, callback=None, progress_bar=False, requests_
 	if callback and not callable(callback):
 		callback = None
 	if not requests_session:
-		requests_session = requests.session()
+		requests_session = cloudscraper.CloudScraper()
 	r = requests_session.get(url, stream=True)
 	if head_verifier and callable(head_verifier):
 		v = head_verifier(r)
