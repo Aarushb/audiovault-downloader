@@ -2,9 +2,12 @@ beautifulsoup4==4.12.3
 bs4==0.0.2
 certifi==2024.8.30
 charset-normalizer==3.4.0
+cloudscraper==1.2.71
 idna==3.10
 legacy-cgi==2.6.2
 progressbar==2.5
+pyparsing==3.2.1
 requests==2.32.3
+requests-toolbelt==1.0.0
 soupsieve==2.6
 urllib3==2.2.3
